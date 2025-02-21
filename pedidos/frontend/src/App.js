@@ -38,7 +38,7 @@ const App = () => {
   const [pedidos, setPedidos] = useState([]);
   
   const fetchPedidos = () => {
-    axios.get("/api/pedidos")
+    axios.get("http://192.168.0.18/api/pedidos")
       .then(response => setPedidos(response.data))
       .catch(error => console.error("Error al obtener pedidos:", error));
   };
