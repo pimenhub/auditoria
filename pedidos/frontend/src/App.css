@@ -1,0 +1,114 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Agregar estilos para centrar y hacer simétrico */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.pedido-table {
+  width: 80%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pedido-table th, .pedido-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.pedido-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.refresh-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.refresh-button:hover {
+  background-color: #218838;
+}
+
+.pedido-icon {
+  width: 100px;
+  margin-top: 10px;
+}
+
+.table-scroll-container {
+  max-height: 400px;
+  overflow-y: auto;
+  width: 80%;
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pedido-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pedido-table th, .pedido-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.pedido-table th {
+  background-color: #007bff;
+  color: white;
+}
