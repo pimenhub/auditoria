@@ -4,25 +4,13 @@ const mysql = require("mysql2");
 const cors = require("cors");
 
 const app = express();
-const allowedOrigins = [
-  'http://192.168.0.20',
-  'http://192.168.0.18:3001/api/pedidos',
-  'http://localhost:3000', // Para desarrollo local
-];
 
 app.use(cors({
-  origin: function (origin, callback) {
-      // Permitir solicitudes sin origen (como aplicaciones móviles o curl)
-      if (!origin) return callback(null, true);
-
-      if (allowedOrigins.indexOf(origin) === -1) {
-          const msg = 'El origen de la solicitud no está permitido.';
-          return callback(new Error(msg), false);
-      }
-      return callback(null, true);
-  },
-  credentials: true
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
 app.use(express.json());
 
 // Configuración de la base de datos
