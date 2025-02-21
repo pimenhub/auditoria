@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 const allowedOrigins = [
   '192.168.0.20',
-  '192.168.0.18:3001',
+  '192.168.0.18',
   'http://localhost:3000', // Para desarrollo local
 ];
 
