@@ -4,7 +4,10 @@ const mysql = require("mysql2");
 const cors = require("cors");
 
 const app = express();
-app.use(cors({ origin: "*" }));
+app.use(cors({
+  origin: '192.168.0.20', // Reemplaza con el dominio de tu frontend
+  credentials: true
+}));
 app.use(express.json());
 
 // Configuración de la base de datos
@@ -24,7 +27,7 @@ db.connect(err => {
 });
 
 // Endpoint para obtener los pedidos
-app.get("/api/pedidos", (req, res) => {
+app.get("api/pedidos", (req, res) => {
   db.query("SELECT * FROM pedido", (err, results) => {
     if (err) {
       res.status(500).json({ error: err.message });
