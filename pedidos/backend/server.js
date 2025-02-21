@@ -24,7 +24,7 @@ db.connect(err => {
 });
 
 // Endpoint para obtener los pedidos
-app.get("/pedidos", (req, res) => {
+app.get("/api/pedidos", (req, res) => {
   db.query("SELECT * FROM pedido", (err, results) => {
     if (err) {
       res.status(500).json({ error: err.message });
