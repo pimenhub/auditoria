@@ -11,6 +11,7 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
+
 app.use(express.json());
 
 // Configuración de la base de datos
