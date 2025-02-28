@@ -17,23 +17,68 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: productos.php");
             exit();
         } else {
-            echo "Contraseña incorrecta.";
+            $error = "Contraseña incorrecta.";
         }
     } else {
-        echo "Usuario no encontrado.";
+        $error = "Usuario no encontrado.";
     }
     $stmt->close();
     $conn->close();
 }
 ?>
-<style>
-    body { font-family: Arial, sans-serif; text-align: center; }
-    form { display: inline-block; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
-    input, button { margin: 10px; padding: 10px; width: 100%; }
-    button { background-color: #007bff; color: white; border: none; cursor: pointer; }
-</style>
-<form method="POST">
-    <input type="email" name="correo" placeholder="Correo" required>
-    <input type="password" name="contrasena" placeholder="Contraseña" required>
-    <button type="submit">Iniciar sesión</button>
-</form>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+        .form-control {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2 class="text-center mb-4">Iniciar Sesión</h2>
+        <?php if (isset($error)): ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $error; ?>
+            </div>
+        <?php endif; ?>
+        <form method="POST">
+            <div class="mb-3">
+                <input type="email" class="form-control" name="correo" placeholder="Correo" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" name="contrasena" placeholder="Contraseña" required>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+            </div>
+            <div class="text-center mt-3">
+                <a href="index.php" class="text-decoration-none">Volver al inicio</a>
+            </div>
+        </form>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
