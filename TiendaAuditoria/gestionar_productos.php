@@ -101,7 +101,7 @@ $result = $conn->query("SELECT * FROM producto ORDER BY id DESC");
                 <div class="col-md-6">
                     <label for="precio" class="form-label">Precio</label>
                     <div class="input-group">
-                        <span class="input-group-text">$</span>
+                        <span class="input-group-text">Q.</span>
                         <input type="number" class="form-control" id="precio" name="precio" step="0.01" min="0" required>
                     </div>
                 </div>

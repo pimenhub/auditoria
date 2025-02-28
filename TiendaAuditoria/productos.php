@@ -74,7 +74,7 @@ $result = $conn->query("SELECT * FROM producto");
                     <?php while ($row = $result->fetch_assoc()) { ?>
                         <tr>
                             <td><?= htmlspecialchars($row['nombre']); ?></td>
-                            <td>$<?= number_format($row['precio'], 2); ?></td>
+                            <td>Q.<?= number_format($row['precio'], 2); ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
