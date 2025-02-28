@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import pedidoIcon from "./pedido.png"; // Imagen relacionada con pedidos
+import pedidoIcon from "./logo.jpeg"; // Imagen relacionada con pedidos
 import "./App.css";
 
 const PedidoTable = ({ pedidos }) => {
